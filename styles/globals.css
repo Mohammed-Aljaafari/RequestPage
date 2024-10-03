@@ -1,0 +1,11 @@
+/* styles/globals.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Or, if you installed using @fontsource */
+@import '@fontsource/roboto/400.css';  /* Regular weight */
+@import '@fontsource/roboto/700.css';  /* Bold weight */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Change to your chosen font */
+}
