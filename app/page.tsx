@@ -1,106 +1,74 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Readex_Pro } from "next/font/google";
+import catGif from "../public/giphy.gif";
+import Head from 'next/head';
+
+const readexPro = Readex_Pro({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <ul>
-          <li><Link href="/test">About Us</Link></li>
-          <li><Link href="/contact">Contact Us</Link></li>
-        </ul>
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Head>
+        <title>IE Club</title>
+        <meta property="og:title" content="IE Club" />
+        <meta property="og:description" content="Welcome to the Intellectual and Electronic Games Club at KFUPM - your ultimate destination for mind-stimulating and adrenaline-pumping gaming experiences! Dive into a vibrant community where passion meets intellect, offering a diverse range of intellectual and electronic games tailored for enthusiasts of all levels. Whether you're a chess grandmaster, a strategy aficionado, or a virtual reality enthusiast, our club provides a dynamic platform to engage, compete, and collaborate with like-minded individuals. Explore our extensive lineup of events, tournaments, and workshops designed to challenge your intellect, foster creativity, and foster lasting friendships. Join us at the forefront of innovation and entertainment, where fun and mental prowess intertwine seamlessly. Embark on your journey to sharpen your skills, expand your horizons, and unleash your gaming potential with the Intellectual and Electronic Games Club at KFUPM today!" />
+        <meta property="og:image" content="ieclub_logo_vector.svg" />
+        <meta property="og:url" content="ie.kfupm.club/" />
+      </Head>
+      <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24">
+        <div className="flex flex-col items-center justify-center w-full max-w-xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center w-full">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/ieclub_logo_vector.svg"
+              alt="Logo"
+              width={100}
+              height={100}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div
+              className="flex flex-col items-center justify-center mt-4 md:mt-0 md:ml-4 w-full"
+              style={{ width: "65%" }}
+            >
+              <p
+                className={`${readexPro.className} text-2xl font-semibold`}
+                style={{
+                  fontSize: "calc(13.5px + 1vmin)",
+                  textAlign: "center",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                نادي الرياضات الذهنية والإلكترونية
+              </p>
+              <p
+                className={`${readexPro.className} text-2xl font-semibold`}
+                style={{
+                  fontSize: "calc(10px + 1vmin)",
+                  textAlign: "center",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                Intellectual & Electronic Sports Club
+              </p>
+            </div>
+          </div>
+          <p className="mt-10 mb-10 text-2xl font-semibold">
+            Work in progress. Stay tuned...
+          </p>
+          {/* gif giphy.gif from public dir */}
+          <Image
+            src={catGif}
+            alt="cat gif"
+            width={300}
+            height={300}
+            priority
+            className="rounded-xl"
+          />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }

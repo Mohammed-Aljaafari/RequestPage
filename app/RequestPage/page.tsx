@@ -4,11 +4,16 @@ import { useState } from 'react';
 import { Box, TextField, Button, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Roboto } from 'next/font/google'
+import { Readex_Pro } from "next/font/google";
+const readexPro = Readex_Pro({ subsets: ["latin"] });
 const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
 })
+
 export default function ActivityForm() {
+ 
+
   const [formData, setFormData] = useState({
     OwnerName: '',
     Phone: '',
@@ -126,7 +131,7 @@ export default function ActivityForm() {
           zIndex: 1 // Make sure the box is above the image
         }}
       >
-        <Typography variant="h5" component="h2" sx={{ mb: 2, color: 'black' }}>
+        <Typography className={readexPro.className} variant="h5" component="h2" sx={{ mb: 2, color: 'black' }}>
           Activity Form
         </Typography>
 
@@ -136,7 +141,7 @@ export default function ActivityForm() {
           </Typography>
         )}
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Name of the owner"
           name="OwnerName"
           value={formData.OwnerName}
@@ -145,7 +150,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Phone"
           name="Phone"
           type="tel" // Use tel input type
@@ -155,7 +160,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Name of the Activity"
           name="activityName"
           value={formData.activityName}
@@ -164,7 +169,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Starting Date"
           type="date"
           name="startDate"
@@ -176,7 +181,7 @@ export default function ActivityForm() {
           inputProps={{ min: today }} // Prevent past dates
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Ending Date"
           type="date"
           name="endDate"
@@ -188,7 +193,7 @@ export default function ActivityForm() {
           inputProps={{ min: today }} // Prevent past dates
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Time"
           type="time"
           name="time"
@@ -199,7 +204,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Location"
           name="location"
           value={formData.location}
@@ -208,7 +213,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Prizes"
           name="prizes"
           value={formData.prizes}
@@ -217,7 +222,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <TextField
+        <TextField className={readexPro.className}
           label="Additional Information"
           name="additionalInfo"
           multiline
@@ -227,7 +232,7 @@ export default function ActivityForm() {
           fullWidth
         />
 
-        <Button variant="contained" color="primary" type="submit">
+        <Button className={readexPro.className} variant="contained" color="primary" type="submit">
           Submit
         </Button>
       </Box>
